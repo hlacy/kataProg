@@ -1,11 +1,17 @@
 package main;
 
+import javax.sound.midi.Soundbank;
 import java.util.IllegalFormatCodePointException;
 import java.util.List;
 import java.util.Scanner;
 
 
 public class Main {
+    public static void main(String[] args) throws Exception {
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        System.out.println(calc(input));
+    }
 
     public static boolean isArabicNumeric(String s) {
         return s != null && s.matches("^[0-9]*$");
@@ -46,7 +52,6 @@ public class Main {
 
         return arabicNumber;
     }
-
     public static String arabicToRoman(int number) throws Exception {
         if ((number <= 0) || (number > 4000)) {
             throw new Exception(number + " is not in range (0,4000]");
